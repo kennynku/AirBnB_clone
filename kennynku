@@ -20,7 +20,7 @@ if ! git add .; then
 fi
 
 # Commit the changes with the co-author line appended to the commit message
-if ! git commit -m "`echo -e "$message"`"; then
+if ! git commit -m "`echo -e "$message\n\nCo-authored-by: Ntsako Ngoveni <naction923@gmail.com>"`"; then
     echo "Error: unable to commit changes"
     exit 1
 fi
