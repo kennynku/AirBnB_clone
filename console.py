@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Define the HBNB console"""
+"""Create HBNB console app """
 import cmd
 from models import storage
 from models.base_model import BaseModel
@@ -13,10 +13,7 @@ from models.user import User
 
 
 class HBNBCommand(cmd.Cmd):
-    """Define the holbertonBnB comand interpreter
-    Attributes:
-        prompt (str): the command prompt.
-
+    """Prompts the user for input
     """
     prompt = "(hbnb) "
     __classes = {
@@ -30,21 +27,20 @@ class HBNBCommand(cmd.Cmd):
     }
 
     def do_quit(self, arg):
-        """Quit command to exit the program"""
+        """Exits program"""
         return True
 
     def do_EOF(self, arg):
-        """EOF signal to exit the program"""
+        """Exits program via end of file sig"""
         print("")
         return True
 
     def emptyline(self):
-        """Do nothing upon receiving empty line"""
+        """Prints an empty line to console"""
         pass
 
     def do_create(self, arg):
-        """Usage: create <class>
-        Create a new class instance and print its id.
+        """Create a new object of a provided class
         """
         argl = shlex.split(arg)
         if len(argl) == 0:
@@ -56,8 +52,7 @@ class HBNBCommand(cmd.Cmd):
             storage.save()
 
     def do_show(self, arg):
-        """Usage: show <class> <id>
-        Display the string representation of a class instance of a given id.
+        """Displays an object of a given ID
         """
         argl = shlex.split(arg)
         objdict = storage.all()
@@ -73,8 +68,7 @@ class HBNBCommand(cmd.Cmd):
             print(objdict["{}.{}".format(argl[0], argl[1])])
 
     def do_destroy(self, arg):
-        """Usage: destroy <class> <id>
-        Delete a class instance of a given id."""
+        """Destroy an object with the provided id"""
         argl = shlex.split(arg)
         objdict = storage.all()
         if len(argl) == 0:
@@ -90,9 +84,7 @@ class HBNBCommand(cmd.Cmd):
             storage.save()
 
     def do_all(self, arg):
-        """Usage: all or all <class>
-        Display string representations of all instances of a given class.
-        If no class is specified, displays all instantiated objects."""
+        """Displays all the objects in storage"""
         argl = shlex.split(arg)
         if len(argl) > 0 and argl[0] not in HBNBCommand.__classes:
             print("** class doesn't exist **")
@@ -106,9 +98,8 @@ class HBNBCommand(cmd.Cmd):
             print(objl)
 
     def do_update(self, arg):
-        """Usage: update <class> <id> <attribute_name> <attribute_value>
-         Update a class instance of a given id by adding or updating
-        a given attribute key/value pair or dictionary."""
+        """Updates a selected class and its attributes
+        """
         argl = shlex.split(arg)
         objdict = storage.all()
 
@@ -151,8 +142,6 @@ class HBNBCommand(cmd.Cmd):
                 else:
                     obj.__dict__[k] = v
         storage.save()
-
-
 
 if __name__ == "__main__":
     HBNBCommand().cmdloop()
