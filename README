@@ -1,1 +1,9 @@
 HBnB is a command-line AirBnB clone that leverages a Python object as its storage engine. The Python object efficiently stores and retrieves property listings and user information. It provides a user-friendly interface for searching and managing properties, ensuring data integrity and persistence within the terminal environment.
+
+The capabilities of this command interpreter include:
+
+- Generating a fresh instance, such as a new User or a new Place.
+- Fetching an instance from a file, a database, or similar sources.
+- Performing actions on instances, such as counting or calculating statistics.
+- Modifying the attributes of an instance.
+- Removing an instance from existence.
