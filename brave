@@ -11,7 +11,7 @@ fi
 
 # Set git config for the current user
 git config user.name "Ntsako Ngoveni"
-git config user.email "naction923@gmail.com"
+git config user.email "naction723@gmail.com"
 
 # Add changes to the staging area
 if ! git add .; then

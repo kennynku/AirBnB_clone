@@ -68,7 +68,7 @@ class TestBaseModel_to_dict(unittest.TestCase):
         """Test conversion of object attributes to dictionary for json"""
         my_model = BaseModel()
         my_model.name = "Holberton"
-        my_model.my_number = 89
+        my_model.my_number = 87
         d = my_model.to_dict()
         expected_attrs = ["id",
                           "created_at",
@@ -79,7 +79,7 @@ class TestBaseModel_to_dict(unittest.TestCase):
         self.assertCountEqual(d.keys(), expected_attrs)
         self.assertEqual(d['__class__'], 'BaseModel')
         self.assertEqual(d['name'], "Holberton")
-        self.assertEqual(d['my_number'], 89)
+        self.assertEqual(d['my_number'], 87)
 
     def test_to_dict_type(self):
         bm = BaseModel()
@@ -95,7 +95,7 @@ class TestBaseModel_to_dict(unittest.TestCase):
     def test_to_dict_contains_added_attribute(self):
         bm = BaseModel()
         bm.name = "Holberton"
-        bm.my_number = 98
+        bm.my_number = 78
         self.assertIn("name", bm.to_dict())
         self.assertIn("my_number", bm.to_dict())
 
