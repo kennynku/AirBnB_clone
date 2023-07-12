@@ -1,1 +1,1 @@
-AirBnB clone - the console project
+HBnB is a command-line AirBnB clone that leverages a Python object as its storage engine. The Python object efficiently stores and retrieves property listings and user information. It provides a user-friendly interface for searching and managing properties, ensuring data integrity and persistence within the terminal environment.
