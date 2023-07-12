@@ -7,3 +7,12 @@ The capabilities of this command interpreter include:
 - Performing actions on instances, such as counting or calculating statistics.
 - Modifying the attributes of an instance.
 - Removing an instance from existence.
+
+How to use:
+
+- quit: Terminates the console.
+- create: Generates a new instance of the BaseModel, saves it to a JSON file, and displays its unique identifier.
+- destroy: Removes an instance based on the class name and identifier, updating the changes in the JSON file.
+- show: Prints the textual representation of an instance, identified by its class name and identifier.
+- all: Prints the textual representations of all instances, either based on a specific class name or regardless of the class.
+- update: Modifies an instance, identified by its class name and identifier, by adding or updating attribute(s), and saves the changes to the JSON file.
