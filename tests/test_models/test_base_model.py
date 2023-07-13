@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""unittest for BaseModel"""
+"""BaseModel test"""
 import unittest
 from unittest import mock
 from models.base_model import BaseModel
@@ -8,7 +8,7 @@ from datetime import datetime
 
 
 class TestBaseModel_Instantiation(unittest.TestCase):
-    """testing instantiation of BaseModel"""
+    """Testing of creation of models instance"""
 
     def no_args_instantiates(self):
         self.assertEqual(BaseModel, type(BaseModel()))
@@ -58,10 +58,10 @@ class TestBaseModel_Instantiation(unittest.TestCase):
 
 
 class TestBaseModel_to_dict(unittest.TestCase):
-    """unittest for testing dict of BaseModel"""
+    """BaseModel to_dict unit test"""
 
     def test_to_dict(self):
-        """Test conversion of object attributes to dictionary for json"""
+        """Convertion from json to dict test"""
         my_model = BaseModel()
         my_model.name = "Holberton"
         my_model.my_number = 89
@@ -121,12 +121,11 @@ class TestBaseModel_to_dict(unittest.TestCase):
 
 
 class TestBaseModel_save(unittest.TestCase):
-    """unittest for testing save of BaseModel"""
+    """Testing save method of BaseModel"""
 
     @mock.patch('models.storage')
     def test_save(self, mock_storage):
-        """Test that save method updates `updated_at` and calls
-        `storage.save`"""
+        """Test of updated_at attribute update test"""
         inst = BaseModel()
         old_created_at = inst.created_at
         old_updated_at = inst.updated_at

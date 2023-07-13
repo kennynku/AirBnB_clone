@@ -1,11 +1,11 @@
 #!/usr/bin/python3
-"""model test for Amenity"""
+"""Amenity unit test"""
 from models.amenity import Amenity
 import unittest
 
 
 class TestAmenity_instantiation(unittest.TestCase):
-    """test for amenity instantination"""
+    """Instance of amenity test"""
 
     def test_no_args_instantiates(self):
         self.assertEqual(Amenity, type(Amenity()))
