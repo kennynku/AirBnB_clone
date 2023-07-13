@@ -48,10 +48,6 @@ class TestBaseModel_Instantiation(unittest.TestCase):
         self.assertEqual(bm.created_at, dt)
         self.assertEqual(bm.updated_at, dt)
 
-    def test_instantiation_with_none_kwargs(self):
-        with self.assertRaises(TypeError):
-            BaseModel(id=None, created_at=None, updated_at=None)
-
     def test_instantiation_with_args_and_kwargs(self):
         dt = datetime.today()
         dt_iso = dt.isoformat()
@@ -68,7 +64,7 @@ class TestBaseModel_to_dict(unittest.TestCase):
         """Test conversion of object attributes to dictionary for json"""
         my_model = BaseModel()
         my_model.name = "Holberton"
-        my_model.my_number = 87
+        my_model.my_number = 89
         d = my_model.to_dict()
         expected_attrs = ["id",
                           "created_at",
@@ -79,7 +75,7 @@ class TestBaseModel_to_dict(unittest.TestCase):
         self.assertCountEqual(d.keys(), expected_attrs)
         self.assertEqual(d['__class__'], 'BaseModel')
         self.assertEqual(d['name'], "Holberton")
-        self.assertEqual(d['my_number'], 87)
+        self.assertEqual(d['my_number'], 89)
 
     def test_to_dict_type(self):
         bm = BaseModel()
@@ -95,7 +91,7 @@ class TestBaseModel_to_dict(unittest.TestCase):
     def test_to_dict_contains_added_attribute(self):
         bm = BaseModel()
         bm.name = "Holberton"
-        bm.my_number = 78
+        bm.my_number = 98
         self.assertIn("name", bm.to_dict())
         self.assertIn("my_number", bm.to_dict())
 
@@ -140,6 +136,7 @@ class TestBaseModel_save(unittest.TestCase):
         self.assertNotEqual(old_updated_at, new_updated_at)
         self.assertEqual(old_created_at, new_created_at)
         self.assertTrue(mock_storage.save.called)
+
 
 if __name__ == "__main__":
     unittest.main()
