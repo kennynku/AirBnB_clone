@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module tests for usr.py"""
+"""User unittest"""
 
 import models
 import unittest
@@ -7,7 +7,7 @@ from models.user import User
 
 
 class testUser_instantination(unittest.TestCase):
-    """Test for instantiation"""
+    """Instance of User class unit testing"""
 
     def test_no_args_instantinates(self):
         self.assertEqual(User, type(User()))
