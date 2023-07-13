@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""test module for filestorage """
+"""Definetion of storage_engine unit test"""
 import os
 import unittest
 
@@ -10,7 +10,7 @@ from models.engine.file_storage import FileStorage
 
 
 class testFilestorage_instantination(unittest.TestCase):
-    """unittest for instantiation of file storage class"""
+    """storage_engine instatiation test"""
 
     def test_Filestorge_instantination_no_args(self):
         self.assertEqual(type(FileStorage()), FileStorage)
@@ -30,7 +30,7 @@ class testFilestorage_instantination(unittest.TestCase):
 
 
 class TestFilestorage_methods(unittest.TestCase):
-    """unitest for the methdos of Filestorage"""
+    """storage_engine method test"""
 
 if __name__ == "__main__":
     unittest.main()
