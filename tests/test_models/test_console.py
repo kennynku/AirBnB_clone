@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Unit test for console app 
+"""Unit test for console app
 """
 
 import console

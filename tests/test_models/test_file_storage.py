@@ -32,5 +32,6 @@ class testFilestorage_instantination(unittest.TestCase):
 class TestFilestorage_methods(unittest.TestCase):
     """storage_engine method test"""
 
+
 if __name__ == "__main__":
     unittest.main()

@@ -18,5 +18,6 @@ class TestCity_instantiation(unittest.TestCase):
         self.assertIn("state_id", dir(cy))
         self.assertNotIn("state_id", cy.__dict__)
 
+
 if __name__ == "__main__":
     unittest.main()

@@ -28,5 +28,6 @@ class TestReview_instantiation(unittest.TestCase):
         self.assertIn("text", dir(rv))
         self.assertNotIn("text", rv.__dict__)
 
+
 if __name__ == "__main__":
     unittest.main()
