@@ -16,5 +16,6 @@ class TestState_instantiation(unittest.TestCase):
         self.assertIn("name", dir(st))
         self.assertNotIn("name", st.__dict__)
 
+
 if __name__ == "__main__":
     unittest.main()

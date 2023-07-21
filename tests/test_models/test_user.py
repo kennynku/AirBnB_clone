@@ -24,5 +24,6 @@ class testUser_instantination(unittest.TestCase):
     def test_last_name_is_public_str(self):
         self.assertEqual(str, type(User.last_name))
 
+
 if __name__ == "__main__":
     unittest.main()
